@@ -1,0 +1,197 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TenantStatus {
+  ACTIVE
+  NOTICE_PERIOD
+  CHECKED_OUT
+  ARCHIVED
+}
+
+enum RentStatus {
+  UPCOMING
+  PENDING
+  PARTIAL
+  PAID
+  OVERDUE
+  WAIVED
+}
+
+enum PaymentMethod {
+  UPI
+  CASH
+  BANK_TRANSFER
+  CARD
+  OTHER
+}
+
+enum TemplateType {
+  DUE_REMINDER
+  DUE_TODAY
+  OVERDUE_REMINDER
+  PAYMENT_CONFIRMATION
+  CHECKOUT_REMINDER
+  MANUAL
+}
+
+enum MessageStatus {
+  MOCK_SENT
+  SENT
+  DELIVERED
+  FAILED
+}
+
+model Property {
+  id        String   @id @default(uuid())
+  name      String   @default("Sunshine PG & Hostel")
+  address   String   @default("123 Main Road, Koramangala, Bengaluru, Karnataka 560034")
+  phone     String   @default("+91 98765 43210")
+  email     String?  @default("contact@sunshinepg.com")
+  logoUrl   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Tenant {
+  id                    String        @id @default(uuid())
+  fullName              String
+  phone                 String
+  alternatePhone        String?
+  email                 String?
+  emergencyContactName  String?
+  emergencyContactPhone String?
+  roomNumber            String
+  bedNumber             String?
+  monthlyRent           Decimal       @db.Decimal(10, 2)
+  depositAmount         Decimal       @db.Decimal(10, 2)
+  joiningDate           DateTime
+  expectedCheckoutDate  DateTime?
+  actualCheckoutDate    DateTime?
+  status                TenantStatus  @default(ACTIVE)
+  notes                 String?
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  rents            Rent[]
+  payments         Payment[]
+  receipts         Receipt[]
+  whatsAppMessages WhatsAppMessage[]
+
+  @@index([status])
+  @@index([roomNumber])
+  @@index([fullName])
+}
+
+model Rent {
+  id              String     @id @default(uuid())
+  tenantId        String
+  rentMonth       String     // Format "YYYY-MM" e.g. "2026-09"
+  amount          Decimal    @db.Decimal(10, 2)
+  dueDate         DateTime
+  paidAmount      Decimal    @default(0.00) @db.Decimal(10, 2)
+  remainingAmount Decimal    @db.Decimal(10, 2)
+  status          RentStatus @default(PENDING)
+  notes           String?
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  tenant   Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  payments Payment[]
+  receipts Receipt[]
+
+  @@unique([tenantId, rentMonth])
+  @@index([rentMonth])
+  @@index([status])
+  @@index([dueDate])
+}
+
+model Payment {
+  id              String        @id @default(uuid())
+  tenantId        String
+  rentId          String
+  amount          Decimal       @db.Decimal(10, 2)
+  paymentDate     DateTime
+  paymentMethod   PaymentMethod @default(UPI)
+  referenceNumber String?
+  notes           String?
+  createdAt       DateTime      @default(now())
+
+  tenant  Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  rent    Rent     @relation(fields: [rentId], references: [id], onDelete: Cascade)
+  receipt Receipt?
+
+  @@index([paymentDate])
+  @@index([tenantId])
+  @@index([rentId])
+}
+
+model Receipt {
+  id              String   @id @default(uuid())
+  receiptNumber   String   @unique // e.g. "PG-2026-000001"
+  tenantId        String
+  rentId          String
+  paymentId       String   @unique
+  amount          Decimal  @db.Decimal(10, 2)
+  paymentDate     DateTime
+  paymentMethod   String
+  remainingAmount Decimal  @db.Decimal(10, 2)
+  pgName          String
+  createdAt       DateTime @default(now())
+
+  tenant  Tenant  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  rent    Rent    @relation(fields: [rentId], references: [id], onDelete: Cascade)
+  payment Payment @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+
+  @@index([receiptNumber])
+}
+
+model WhatsAppMessage {
+  id               String        @id @default(uuid())
+  tenantId         String
+  phone            String
+  templateName     String
+  messageBody      String
+  sentAt           DateTime      @default(now())
+  status           MessageStatus @default(MOCK_SENT)
+  providerResponse String?
+  error            String?
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([sentAt])
+}
+
+model MessageTemplate {
+  id        String       @id @default(uuid())
+  type      TemplateType @unique
+  name      String
+  content   String
+  isDefault Boolean      @default(true)
+  updatedAt DateTime     @updatedAt
+}
+
+model ApplicationSetting {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     String   // Stored as JSON string or plain value
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  entity    String
+  entityId  String?
+  details   String?
+  timestamp DateTime @default(now())
+
+  @@index([timestamp])
+  @@index([entity])
+}
