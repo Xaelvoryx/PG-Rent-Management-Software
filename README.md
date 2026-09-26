@@ -42,7 +42,7 @@ A simple, reliable, extremely easy-to-use Paying Guest (PG) rental management de
 ```bash
 # Database name: pgrent
 # Default connection string in .env:
-# postgresql://postgres:otakuanime@localhost:5432/pgrent?schema=public
+# postgresql://postgres:YOUR_PASSWORD_HERE@localhost:5432/pgrent?schema=public
 ```
 
 ### 2. Install & Seed
