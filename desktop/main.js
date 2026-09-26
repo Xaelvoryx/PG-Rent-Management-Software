@@ -12,8 +12,8 @@ function createWindow() {
     title: 'PG Rent Manager',
     autoHideMenuBar: true,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
+      nodeIntegration: false,
+      contextIsolation: true,
     },
   });
 
