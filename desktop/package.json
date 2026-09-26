@@ -1,0 +1,29 @@
+{
+  "name": "desktop-shell",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Windows Desktop Executable Shell for PG Rent Manager",
+  "author": "PG Rent Manager Team",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx electron .",
+    "pack": "npx electron-builder --dir",
+    "dist": "npx electron-builder"
+  },
+  "build": {
+    "appId": "com.pgrent.manager",
+    "productName": "PG Rent Manager",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "app-builder-bin": "^5.0.0-alpha.10",
+    "electron": "33.0.0",
+    "electron-builder": "^25.1.8"
+  }
+}
