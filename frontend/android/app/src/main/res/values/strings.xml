@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PG Rent Manager</string>
+    <string name="title_activity_main">PG Rent Manager</string>
+    <string name="package_name">com.pgrent.manager</string>
+    <string name="custom_url_scheme">com.pgrent.manager</string>
+</resources>
