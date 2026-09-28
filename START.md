@@ -1,3 +1,26 @@
+
+
+
+
+# 1. Start Backend API Server (Port 4000)
+npm run start:dev --workspace=backend
+
+# 2. Start Frontend Desktop UI (Port 3000)
+npm run dev --workspace=frontend
+
+# 3. Run Backend Unit Tests
+npm run test --workspace=backend
+
+# 4. Package Windows Installer Executable (PG-Rent-Manager-Setup.exe)
+cd desktop
+npm run dist
+
+
+npm run mobile:android --workspace=frontend
+
+
+
+
 # 🚀 PG Rent Manager — Quick Start Commands
 
 ## ✅ Step 1 — Start the Backend (NestJS API)
@@ -68,3 +91,6 @@ git push origin main
 
 ## 🛑 Stop Everything
 Press `Ctrl + C` in each terminal window to stop the servers.
+
+
+
