@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #f4f4f5;
+  --foreground: #09090b;
 }
 
 body {
@@ -15,23 +15,28 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar for Desktop App feel */
+/* Custom Scrollbar - black & white theme */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f4f4f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #d4d4d8;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #a1a1aa;
+}
+
+/* Input & Select reset */
+input, select, textarea {
+  user-select: text;
 }
 
 /* Print styles for Receipts & Reports */
