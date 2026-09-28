@@ -36,9 +36,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, prope
 
   return (
     <aside
-      className={`${
+      className={`hidden md:flex ${
         collapsed ? 'w-16' : 'w-60'
-      } bg-black text-white flex flex-col h-screen border-r border-zinc-800 select-none no-print transition-all duration-300 ease-in-out relative flex-shrink-0`}
+      } bg-black text-white flex-col h-screen border-r border-zinc-800 select-none no-print transition-all duration-300 ease-in-out relative flex-shrink-0`}
     >
       {/* Toggle Button */}
       <button
