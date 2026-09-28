@@ -270,19 +270,19 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <div className="flex h-screen bg-slate-100 items-center justify-center">
+      <div className="flex h-screen bg-zinc-100 items-center justify-center">
         <div className="flex flex-col items-center space-y-4">
-          <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center animate-pulse">
+          <div className="w-12 h-12 rounded-xl bg-black flex items-center justify-center animate-pulse">
             <Building className="w-7 h-7 text-white" />
           </div>
-          <span className="text-sm font-semibold text-slate-500 tracking-wide">Loading PG Rent Manager...</span>
+          <span className="text-sm font-semibold text-zinc-500 tracking-wide">Loading PG Rent Manager...</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex h-screen bg-slate-100 overflow-hidden font-sans">
+    <div className="flex h-screen bg-zinc-100 overflow-hidden font-sans">
       {/* Sidebar Navigation */}
       <Sidebar
         activeTab={activeTab}
