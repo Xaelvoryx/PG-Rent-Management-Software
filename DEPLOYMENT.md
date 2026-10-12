@@ -1,6 +1,6 @@
 # Windows Desktop Packaging & Installer Guide — PG Rent Manager
 
-## 📦 Building Windows Executable Setup (`PG-Rent-Manager-Setup.exe`)
+##  Building Windows Executable Setup (`PG-Rent-Manager-Setup.exe`)
 
 ### Step 1: Build Production Bundles
 ```bash
