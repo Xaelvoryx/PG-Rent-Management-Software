@@ -80,7 +80,7 @@ Installer will be at: `desktop\dist\PG Rent Manager Setup 1.0.0.exe`
 
 ---
 
-## 🔁 Git — Commit & Push Changes
+##  Git — Commit & Push Changes
 ```
 git add <filename>
 git commit -m "Your message here"
