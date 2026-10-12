@@ -23,7 +23,7 @@ A simple, reliable, extremely easy-to-use Paying Guest (PG) rental management de
 
 ---
 
-## 🚀 Technology Stack
+##  Technology Stack
 
 - **Frontend**: Next.js 15, React 19, TailwindCSS, Lucide Icons, Axios.
 - **Backend**: NestJS 10, TypeScript, Validation Pipes, PDFKit.
