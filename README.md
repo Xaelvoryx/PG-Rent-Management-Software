@@ -32,7 +32,7 @@ A simple, reliable, extremely easy-to-use Paying Guest (PG) rental management de
 
 ---
 
-## 💻 Local Quick Start Guide
+##  Local Quick Start Guide
 
 ### Prerequisites
 - **Node.js**: v18+ (v22.14.0 recommended)
