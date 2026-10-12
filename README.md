@@ -1,4 +1,4 @@
-# PG Rent Manager — Production Desktop Application
+# PG Rent Manager — Production software and app for all device installation and head dig in.
 
 A simple, reliable, extremely easy-to-use Paying Guest (PG) rental management desktop application for PG owners and managers.
 
