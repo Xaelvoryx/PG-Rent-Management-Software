@@ -21,7 +21,7 @@ npm run mobile:android --workspace=frontend
 
 
 
-# 🚀 PG Rent Manager — Quick Start Commands
+#  PG Rent Manager — Quick Start Commands
 
 ## ✅ Step 1 — Start the Backend (NestJS API)
 Open a terminal and run:
