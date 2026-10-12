@@ -1,6 +1,6 @@
 # Architecture & System Design — PG Rent Manager
 
-## 🏛️ High-Level System Architecture
+##  High-Level System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
