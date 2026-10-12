@@ -68,7 +68,7 @@ Open your browser at `http://localhost:3000` or launch the desktop application s
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run Backend Unit Tests
