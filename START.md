@@ -33,7 +33,7 @@ Wait until you see: `Application is running on: http://[::1]:4000`
 
 ---
 
-## ✅ Step 2 — Start the Frontend (Next.js Web UI)
+##  Step 2 — Start the Frontend (Next.js Web UI)
 Open a **second** terminal and run:
 ```
 cd C:\Users\gobin\OneDrive\Desktop\pgrent\frontend
