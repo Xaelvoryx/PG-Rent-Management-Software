@@ -51,7 +51,7 @@ http://localhost:3000
 
 ---
 
-## 💻 Step 4 (Optional) — Launch the Desktop App (Electron)
+##  Step 4 (Optional) — Launch the Desktop App (Electron)
 Open a **third** terminal and run:
 ```
 cd C:\Users\gobin\OneDrive\Desktop\pgrent\desktop
