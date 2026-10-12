@@ -10,7 +10,7 @@ A simple, reliable, extremely easy-to-use Paying Guest (PG) rental management de
 
 ---
 
-## 🌟 Key Modules & Features
+## Key Modules & Features
 
 - **Dashboard**: Instant visibility into expected, collected, pending, and overdue rent totals + collection progress indicator.
 - **Tenant Management**: Full tenant records (room/bed, emergency contacts, joining/checkout dates, monthly rent, deposit) with soft-deletion archival.
