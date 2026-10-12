@@ -27,7 +27,7 @@
                                └──────────────────────────────┘
 ```
 
-## 🔐 Core Engineering Principles
+##  Core Engineering Principles
 
 1. **Financial Integrity**: Money is represented strictly as PostgreSQL `DECIMAL(10,2)` / Prisma `Decimal` types. Floating-point arithmetic is prohibited.
 2. **Deterministic Status Calculation**: Rent status (`PAID`, `PARTIAL`, `OVERDUE`, `PENDING`, `UPCOMING`, `WAIVED`) is dynamically derived from rent amount, total payments, due date, and current date.
