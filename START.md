@@ -71,7 +71,7 @@ Then in Android Studio: **Build > Build APK(s)**
 
 ---
 
-## 📦 Step 6 (Optional) — Build Windows Installer (.exe)
+##  Step 6 (Optional) — Build Windows Installer (.exe)
 ```
 cd C:\Users\gobin\OneDrive\Desktop\pgrent\desktop
 npm run dist
