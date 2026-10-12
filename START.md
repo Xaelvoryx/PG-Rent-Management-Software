@@ -89,7 +89,7 @@ git push origin main
 
 ---
 
-## 🛑 Stop Everything
+##  Stop Everything
 Press `Ctrl + C` in each terminal window to stop the servers.
 
 
