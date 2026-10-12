@@ -60,7 +60,7 @@ npx electron .
 
 ---
 
-## 📱 Step 5 (Optional) — Build Android APK
+##  Step 5 (Optional) — Build Android APK
 ```
 cd C:\Users\gobin\OneDrive\Desktop\pgrent\frontend
 npm run build
