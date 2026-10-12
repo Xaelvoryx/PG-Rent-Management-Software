@@ -43,7 +43,7 @@ Wait until you see: `Ready on http://localhost:3000`
 
 ---
 
-## ✅ Step 3 — Open the App
+##  Step 3 — Open the App
 Open your browser and go to:
 ```
 http://localhost:3000
